@@ -8,7 +8,7 @@
     <meta
       name="description"
       content="Web site created using create-react-app"/>
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192px.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -33,44 +33,43 @@
       background-attachment: fixed;
       background-position: center;
       background-size: cover;
+      font-family:cursive;
+      font-style:italic;
+     }
+    .icon-bar {
+      width: 100%;
+      background-image: url('../src/images/icon_background.jpg');
+      overflow: hidden;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+     }
 
-font-family:cursive;
-font-style:italic;
-}
-.icon-bar {
-width: 100%;
-background-image: url('../src/images/icon_background.jpg');
-overflow: hidden;
-display: flex;
-justify-content: space-between;
-align-items: center;
-}
+    .icon-bar a {
+      float: left;
+      text-align: center;
+      width: 16.5%;
+      padding: 12px 0;
+      transition: all 0.3s ease;
+      color: rgb(255, 255, 255);
+      font-size: 40px;
+    }
 
-.icon-bar a {
-float: left;
-text-align: center;
-width: 16.5%;
-padding: 12px 0;
-transition: all 0.3s ease;
-color: rgb(255, 255, 255);
-font-size: 40px;
-}
+    .icon-bar a:hover {
+      background-color:rgb(122, 173, 223);
+    }
 
-.icon-bar a:hover {
-background-color:rgb(122, 173, 223);
-}
+    .active {
+      background-color:rgb(172, 61, 189);
+    }
 
-.active {
-background-color:rgb(172, 61, 189);
-}
-h1{
-
-  font-weight:1000;
-}
-</style>
+    h1{
+      font-weight:1000;
+    }
+    </style>
   </head>
   <body >
-   <!-- <h1 style="color:black;">FlashCard-Quizzz App</h1>-->
+
     <div class="icon-bar">
       <a class="active" href="index.html"><i class="fa fa-home"></i></a>
       <a href="https://mail.google.com/mail/u/0/#inbox?compose=new"><i class="fa fa-envelope"></i></a>
