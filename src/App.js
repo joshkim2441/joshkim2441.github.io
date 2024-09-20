@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import FlashcardList from './FlashcardList';
+import FlashcardList from 'FlashcardList';
 import './App.css'
 import axios from 'axios'
 
@@ -17,7 +17,7 @@ function App() {
       })
   }, [])
 
- 
+
 
   function decodeString(str) {
     const textArea = document.createElement('textarea')
@@ -29,7 +29,7 @@ function App() {
     e.preventDefault()
     axios
     .get('https://opentdb.com/api.php', {
-      params: { 
+      params: {
         amount: amountEl.current.value,
         category: categoryEl.current.value
       }
