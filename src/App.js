@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
-import FlashcardList from 'FlashcardList';
+import langCardList from './langCardList';
 import './App.css'
 import axios from 'axios'
 
 function App() {
-  const [flashcards, setFlashcards] = useState([])
+  const [langCards, setLangCards] = useState([])
   const [categories, setCategories] = useState([])
 
   const categoryEl = useRef()
@@ -35,7 +35,7 @@ function App() {
       }
     })
     .then(res => {
-      setFlashcards(res.data.results.map((questionItem, index) => {
+      setLangCards(res.data.results.map((questionItem, index) => {
         const answer = decodeString(questionItem.correct_answer)
         const options = [
           ...questionItem.incorrect_answers.map(a => decodeString(a)),
@@ -71,7 +71,7 @@ function App() {
         </div>
       </form>
       <div className="container">
-        <FlashcardList flashcards={flashcards} />
+        <langCardList langCards={langCards} />
       </div>
     </>
   );

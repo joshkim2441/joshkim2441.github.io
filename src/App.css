@@ -25,13 +25,13 @@ body {
 }
 
 .form-group > label {
-  color: #777;
+  color: #44463f;
   font-size: .75rem;
   margin-bottom: .25rem;
 }
 
 .btn {
-  background-color: hsl(200, 100%, 50%);
+  background-color: hsl(338, 100%, 50%);
   color: white;
   padding: .5em 1em;
   border-radius: .3em;
@@ -40,7 +40,7 @@ body {
 }
 
 .btn:hover {
-  background-color: hsl(200, 100%, 40%);
+  background-color: hsl(149, 100%, 40%);
 }
 
 .card-grid {
@@ -56,29 +56,29 @@ body {
   align-items: center;
   position: relative;
   border-radius: .25rem;
-  box-shadow: 0 0 5px 2px rgba(0, 0, 0, .3);
+  box-shadow: 0 0 5px 2px rgba(116, 16, 16, 0.3);
   background-color: white;
-  transform-style: preserve-3d; 
+  transform-style: preserve-3d;
   transition: 150ms;
   cursor: pointer;
-  
-  transform: perspective(1000px) rotateY(var(--rotate-y, 0)) 
+
+  transform: perspective(1000px) rotateY(var(--rotate-y, 0))
   translateY(var(--translate-y, 0));
 }
 
 .card:hover {
   --translate-y: -2px;
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, .5);
-  
+
 }
 
 .card.flip {
   --rotate-y: 180deg;
   background-color: black;
-  color: blue;
+  color: rgb(43, 84, 150);
   font-size: 1.8rem;
   border-radius: 2em;
-  
+
 }
 
 .card .front {
@@ -90,13 +90,13 @@ body {
   position: absolute;
   padding: 1rem;
   backface-visibility: hidden;
-  
+
 }
 
 .card .back {
   transform: rotateY(180deg);
 
-  
+
 }
 
 .flashcard-options {

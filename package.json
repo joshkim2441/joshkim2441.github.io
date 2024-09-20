@@ -1,5 +1,5 @@
 {
-  "name": "flashcard-app",
+  "name": "memcard-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -13,10 +13,13 @@
     "react-scripts": "3.4.1"
   },
   "scripts": {
-    "start": "react-scripts start index.js",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
   },
   "browserslist": {
     "production": [
