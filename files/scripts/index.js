@@ -124,7 +124,7 @@ passengerDropdownContent.addEventListener('click', (event) => {
     }
 });
 
-/* Selected passenger output */
+/* Selected passenger output vehicle img */
 const vehicleTypes = {
     "2000": "Saloon",
     "3000": "Van",
@@ -182,10 +182,11 @@ function initPayPalButton() {
 
                     // Show a success message within this page, for example:
                     const element = document.getElementById("paypal-button-container");
-                    element.innerHTML = "";
+                    element.innerHTML = "<h3>Your payment has been received.<h3>";
                     element.innerHTML = "<h3>Thank you for your payment!</h3>";
 
-                    // Or go to another URL:  actions.redirect('thank_you.html');
+                    // Or go to another URL:
+                    actions.redirect('cheers.html');
                 });
             },
 
@@ -197,45 +198,8 @@ function initPayPalButton() {
 }
 initPayPalButton();
 
+
 /* Comments */
-document.addEventListener('DOMContentLoaded', (event) => {
-    loadComments();
-});
-
-function addComment() {
-    const commentInput = document.getElementById('commentInput');
-    const commentText = commentInput.value.trim();
-
-    if (commentText) {
-        const comments = getComments();
-        comments.push(commentText);
-        localStorage.setItem('comments', JSON.stringify(comments));
-        commentInput.value = '';
-        displayComments(comments);
-    }
-}
-
-function getComments() {
-    const comments = localStorage.getItem('comments');
-    return comments ? JSON.parse(comments) : [];
-}
-
-function loadComments() {
-    const comments = getComments();
-    displayComments(comments);
-}
-
-function displayComments(comments) {
-    const commentsSection = document.getElementById('commentsSection');
-    commentsSection.innerHTML = '';
-    comments.forEach(comment => {
-        const commentElement = document.createElement('p');
-        commentElement.textContent = comment;
-        commentsSection.appendChild(commentElement);
-    });
-}
-
-/** */
 function myFunction() {
     let data = ""; let name = document.getElementById("fullame").value
     let email = document.getElementById("email").value
