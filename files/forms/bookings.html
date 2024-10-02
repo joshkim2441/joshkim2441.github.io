@@ -93,9 +93,23 @@
       </div>
     </div>
     <div class="footer-buttons">
-    <div id="paypal-button-container"></div>
-    <script
-        src="https://www.paypal.com/sdk/js?client-id=AUgyGZ6ROWAqwpVCLelOH7s9Gzz2osIuhkgyLB6X-zoZT-mFlH8cQQYzL8cyD9D67aMhRZXJMkZGrX9l"></script>
+    <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
+        <input type="hidden" name="cmd" value="_xclick">
+        <input type="hidden" name="hosted_button_id" value="DLNC6A3A6QZU4" />
+        <input type="hidden" name="business" value="joshmutuse@yahoo.com">
+        <input type="hidden" name="item_name" value="Trip Cost">
+        <input type="hidden" name="amount" value="0">
+        <input type="hidden" name="item_number" value="SE-001">
+        <input type="hidden" name="no_shipping" value="1">
+        <input type="hidden" name="return" value="http://www.afroceantransfers.com/thankyou.html">
+        <input type="hidden" name="cancel_return" value="http://www.afroceantransfers.com/cancel.html">
+        <input type="hidden" name="no_note" value="1">
+        <input type="hidden" name="currency_code" value="USD">
+        <input type="hidden" name="tax" value="0">
+        <input type="hidden" name="lc" value="US">
+        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit"
+            title="PayPal - The safer, easier way to pay online!" alt="Buy Now" />
+    </form>
         <div class="backto-homepage"></div>
             <a href="../../index.html" id="vehicle-image">Back to Home Page</a>
         </div>
