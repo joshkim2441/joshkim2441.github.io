@@ -1,11 +1,13 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <title>BOOKINGS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="../styles/chrbookings.css">
+    <link rel="stylesheet" href="../styles/bookings.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.3.7/jquery.datetimepicker.min.css" />
     <!-- Load JS second -->
@@ -18,82 +20,91 @@
     <script type="text/javascript">
         jQuery(document).ready($ => $('#datetimepicker').datetimepicker());
     </script>
-    <script async src="https://www.paypalobjects.com/js/external/paypal-button.min.js"
-        type="text/javascript">
+    <script async src="https://www.paypalobjects.com/js/external/paypal-button.min.js" type="text/javascript">
     </script>
 </head>
+
 <body style="background-image: url(../images/bus.jpg);">
+    <script>
+        (function (d, s, id) {
+            var js, mpesa = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) { return; }
+            js = d.createElement(s); js.id = id;
+            js.src = "https://cdn.jsdelivr.net/gh/muaad/mpesa_button@master/src/button.min.js";
+            mpesa.parentNode.insertBefore(js, mpesa);
+        }(document, 'script', 'mpesa_btn_js'));
+    </script>
     <header>
         <h1><a><img src="../images/logo.png" class="logo"></a>Afrocean Taxis</h>
     </header>
     <div class="parent">
-      <div class="bookings">
-        <div class="dates">
-            <label for="datetimepicker">Choose a transfer date:</label>
-            <input type="datetime-local" id="datetimepicker" width="300px" name="datetimepicker">
+        <div class="bookings">
+            <div class="dates">
+                <label for="datetimepicker">Choose a transfer date:</label>
+                <input type="datetime-local" id="datetimepicker" width="300px" name="datetimepicker">
+            </div>
+            <section>
+                <div class="pass-dropdown">
+                    <button class="pass-dropbtn">Select Number of passengers</button>
+                    <div class="pass-dropdown-content">
+                        <a href="#" data-value="2000">Less than 4</a>
+                        <a href="#" data-value="3000">Between 4 and 7</a>
+                        <a href="#" data-value="4000">Between 8 and 14</a>
+                        <a href="#" data-value="5000">Between 15 and 28</a>
+                        <a href="#" data-value="7000">Between 29 and 56</a>
+                        <a href="#">More</a>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="pickup-dropdown">
+                    <button class="pickup-dropbtn">Select Pick-up Point</button>
+                    <div class="pickup-dropdown-content">
+                        <a href="#">Mombasa International Airport</a>
+                        <a href="#">Mombasa Standard Gauge Terminal</a>
+                        <a href="#">Mombasa Town Bus Terminus</a>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="dest-dropdown">
+                    <button class="dest-dropbtn">Select Destination</button>
+                    <div class="dest-dropdown-content">
+                        <a href="#">Mombasa County</a>
+                        <a href="#">Diani</a>
+                        <a href="#">Kilifi</a>
+                        <a href="#">Watamu</a>
+                        <a href="#">Malindi</a>
+                        <a href="#">Lamu</a>
+                    </div>
+                </div>
+            </section>
         </div>
-        <section>
-        <div class="pass-dropdown">
-            <button class="pass-dropbtn">Select Number of passengers</button>
-            <div class="pass-dropdown-content">
-                <a href="#" data-value="2000">Less than 4</a>
-                <a href="#" data-value="3000">Between 4 and 7</a>
-                <a href="#" data-value="4000">Between 8 and 14</a>
-                <a href="#" data-value="5000">Between 15 and 28</a>
-                <a href="#" data-value="7000">Between 29 and 56</a>
-                <a href="#">More</a>
+        <div class="bookings" style="align-items: center;">
+            <span class="datetimepicker"></span>
+            <br />
+            <div class="btn-output">
+                <span id="selected-pass">Number of passengers not selected</span>
+                <div id="pass-selection"></div>
+            </div>
+            <div class="btn-output">
+                <span id="selected-pickup">No pick-up point selected</span>
+                <div id="pickup-selection"></div>
+            </div>
+            <div class="btn-output">
+                <span id="selected-destination">No destination selected</span>
+                <div id="destination-selection"></div>
+            </div>
+            <div id="cost"></div>
+        </div>
+        <div class="bookings">
+            <div id="vehicle-image-container">
+                <img id="vehicle-image" src="../images/logo.png" alt="Vehicle Image">
             </div>
         </div>
-        </section>
-        <section>
-        <div class="pickup-dropdown">
-            <button class="pickup-dropbtn">Select Pick-up Point</button>
-            <div class="pickup-dropdown-content">
-                <a href="#">Mombasa International Airport</a>
-                <a href="#">Mombasa Standard Gauge Terminal</a>
-                <a href="#">Mombasa Town Bus Terminus</a>
-            </div>
-        </div>
-        </section>
-        <section>
-        <div class="dest-dropdown">
-            <button class="dest-dropbtn">Select Destination</button>
-            <div class="dest-dropdown-content">
-                <a href="#">Mombasa County</a>
-                <a href="#">Diani</a>
-                <a href="#">Kilifi</a>
-                <a href="#">Watamu</a>
-                <a href="#">Malindi</a>
-                <a href="#">Lamu</a>
-            </div>
-        </div>
-        </section>
-      </div>
-      <div class="bookings" style="align-items: center;">
-        <span class="datetimepicker"></span>
-        <br />
-        <div class="btn-output">
-            <span id="selected-pass">Number of passengers not selected</span>
-            <div id="pass-selection"></div>
-        </div>
-        <div class="btn-output">
-            <span id="selected-pickup">No pick-up point selected</span>
-            <div id="pickup-selection"></div>
-        </div>
-        <div class="btn-output">
-            <span id="selected-destination">No destination selected</span>
-            <div id="destination-selection"></div>
-        </div>
-        <div id="cost"></div>
-      </div>
-      <div class="bookings">
-        <div id="vehicle-image-container">
-            <img id="vehicle-image" src="" alt="Vehicle Image">
-        </div>
-      </div>
-    </div>
-    <div class="footer-buttons">
-    <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
+    </div><br>
+
+    <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top" id="paypal-form">
         <input type="hidden" name="cmd" value="_xclick">
         <input type="hidden" name="hosted_button_id" value="DLNC6A3A6QZU4" />
         <input type="hidden" name="business" value="joshmutuse@yahoo.com">
@@ -107,14 +118,26 @@
         <input type="hidden" name="currency_code" value="USD">
         <input type="hidden" name="tax" value="0">
         <input type="hidden" name="lc" value="US">
-        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit"
-            title="PayPal - The safer, easier way to pay online!" alt="Buy Now" />
-    </form>
-        <div class="backto-homepage"></div>
-            <a href="../../index.html" id="vehicle-image">Back to Home Page</a>
+    </form><br>
+
+    <div class="footer-buttons">
+        <h3 style="color: blueviolet;"><i class="fa fa-money" id="spt" style="margin-right: 10px; color: rgb(193, 32, 32);"></i>Choose payment method:</h3><br>
+        <div class="paypal-button">
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0"
+                name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" form="paypal-form" />
+        </div>
+        <div class="mpesa-button" id='mpesaButton'
+            data-url='https://domain.com/mpesa/payments/request'>
         </div>
     </div>
-    <script src="https://sandbox.paypal.com/sdk/js?client-id=AUgyGZ6ROWAqwpVCLelOH7s9Gzz2osIuhkgyLB6X-zoZT-mFlH8cQQYzL8cyD9D67aMhRZXJMkZGrX9l"></script>
-<script language="JavaScript" src="../scripts/index.js" type="text/javascript"></script>
+    <footer>
+        <div class="backto-homepage">
+            <a href="../../index.html" id="vehicle-image">Back to Home Page</a>
+        </div>
+    </footer>
+    <script
+        src="https://sandbox.paypal.com/sdk/js?client-id=AUgyGZ6ROWAqwpVCLelOH7s9Gzz2osIuhkgyLB6X-zoZT-mFlH8cQQYzL8cyD9D67aMhRZXJMkZGrX9l"></script>
+    <script language="JavaScript" src="../scripts/index.js" type="text/javascript"></script>
 </body>
+
 </html>
