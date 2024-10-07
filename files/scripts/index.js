@@ -109,22 +109,22 @@ passengerDropdownContent.addEventListener('click', (event) => {
         console.log(`Selected Passenger Count: ${selectedPassengerCount}`); // Add this line
         switch (selectedPassengerCount) {
             case '2000':
-                vehicleImage.src = '../images/saloon.jpg';
+                vehicleImage.src = 'https://imgur.com/JUSqWC3.jpg';
                 break;
             case '3000':
-                vehicleImage.src = '../images/noah.jpg';
+                vehicleImage.src = 'https://imgur.com/IGjZic4.jpg';
                 break;
             case '4000':
-                vehicleImage.src = '../images/van.jpg';
+                vehicleImage.src = 'https://imgur.com/4aVjbnq.jpg';
                 break;
             case '5000':
-                vehicleImage.src = '../images/minibus.jpg';
+                vehicleImage.src = 'https://imgur.com/iVjwIuP.jpg';
                 break;
             case '7000':
-                vehicleImage.src = '../images/bus.jpg';
+                vehicleImage.src = 'https://imgur.com/0g0zJAz.jpg';
                 break;
             default:
-                vehicleImage.src = '../images/logo.png'; // Clear the image if no match
+                vehicleImage.src = 'https://imgur.com/6h5ow4f.png'; // Clear the image if no match
         }
     }
 });

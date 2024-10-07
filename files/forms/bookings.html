@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.3.7/jquery.datetimepicker.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <!-- Load JS second -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"
@@ -22,6 +23,330 @@
     </script>
     <script async src="https://www.paypalobjects.com/js/external/paypal-button.min.js" type="text/javascript">
     </script>
+    <style>
+        /* General styles */
+html {
+    height: 100%;
+}
+body,
+html {
+    padding: 0px;
+    margin: 0;
+    width: 100%;
+    min-height: 100%;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+    top: 0;
+    height: 5%;
+    margin-top: 0;
+    padding: 0;
+    text-align: center;
+    position: fixed;
+}
+
+h1 {
+    color: #00FFAB;
+    width: 1200px;
+    height: 180%;
+    font-size: 20;
+    margin-top: 0%;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 3px 2px 3px red, 2px 2px 1px blue;
+    background-color: red;
+    animation-name: colorchange;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes colorchange {
+    0% {
+        background-color: rgb(0, 255, 55);
+    }
+
+    33% {
+        background-color: yellow;
+    }
+
+    100% {
+        background-color: blue;
+    }
+}
+
+h3 {
+    text-align: center;
+}
+
+.logo {
+    height: auto;
+    top: 0px;
+    left: 0px;
+    width: auto;
+    max-height: 50px;
+    max-width: 100px;
+}
+
+/* Parent Div */
+.parent {
+    align-items: center;
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: row;
+}
+
+/* Bookings */
+.bookings {
+    margin-bottom: 0px;
+    display: inline-block;
+    border: none;
+    padding: 1rem 1rem;
+    height: 50%;
+    width: 30%;
+}
+
+.btn-output {
+    padding: 9%;
+}
+
+/* Dates section */
+.dates {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+
+
+/* Vehicle image container */
+#vehicle-image-container {
+    margin-right: 0%;
+    padding: 1px;
+    width: 100%;
+    height: 100%;
+}
+
+/* Vehicle image */
+#vehicle-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+
+/* Cost div */
+#cost {
+    text-align: center;
+    position: absolute;
+    font-size: 20px;
+    font-weight: 5000px;
+    top: 80%;
+    left: 45%;
+    margin-bottom: 5%;
+    background-color: #8c61d0;
+    transform: translateX(-50%);
+}
+
+.mpesaForm {
+    position: absolute;
+    /* Make the form absolutely positioned */
+    bottom: 0;
+    /* Position it at the bottom of the container */
+    left: 10%;
+    /* Position it at the right of the container */
+    display: none;
+    /* Initially hide the form */
+    font-size: 1.5rem;
+    /* Adjust font size for close icon */
+    cursor: pointer;
+    /* Set cursor to pointer on hover */
+}
+
+form {
+    margin-bottom: 0;
+}
+
+.paypal-button {
+    display: inline-block;
+    margin-left: 10%;
+}
+
+.mpesa-button {
+    display: inline-block;
+    margin-right: 10%;
+}
+
+.footer-buttons {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1px;
+    background-color: none;
+    box-sizing: border-box;
+    margin-top: 2%;
+    margin-bottom: 0vw;
+}
+
+.backto-homepage {
+    position: absolute;
+    margin-left: 0px;
+    margin-bottom: 0px;
+}
+
+/* footer */
+footer {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    width: 100%;
+    height: 7%;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    background-color: #00FFAB;
+}
+
+/* Accordion */
+.accordion {
+    width: 100%;
+    height: 100%;
+    max-width: 360px;
+    margin: 30px auto 20px;
+    background: #FFF;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.accordion .link {
+    cursor: pointer;
+    display: block;
+    padding: 15px 15px 15px 42px;
+    color: #4D4D4D;
+    font-size: 14px;
+    font-weight: 700;
+    border-bottom: 1px solid #CCC;
+    position: relative;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+
+        .accordion li:last-child .link { border-bottom: 0; }
+
+        .accordion li i {
+            position: absolute;
+            top: 16px;
+            left: 12px;
+            font-size: 18px;
+            color: #595959;
+            -webkit-transition: all 0.4s ease;
+            -o-transition: all 0.4s ease;
+            transition: all 0.4s ease;
+        }
+
+        .accordion li i.fa-chevron-down {
+            right: 12px;
+            left: auto;
+            font-size: 16px;
+        }
+
+        .accordion li.open .link { color: #b63b4d; }
+
+        .accordion li.open i { color: #b63b4d; }
+
+        .accordion li.open i.fa-chevron-down {
+            -webkit-transform: rotate(180deg);
+            -ms-transform: rotate(180deg);
+            -o-transform: rotate(180deg);
+            transform: rotate(180deg);
+        }
+
+        .submenu {
+            display: none;
+            background: #444359;
+            font-size: 14px;
+        }
+
+        .submenu li { border-bottom: 1px solid #4b4a5e; }
+
+        .submenu a {
+            display: block;
+            text-decoration: none;
+            color: #d9d9d9;
+            pad: 12px;
+            padding-left: 42px;
+            -webkit-transition: all 0.25px ease;
+            -o-transition: all 0.25s ease;
+            transition: all 0.25s ease;
+        }
+
+        .submenu a:hover {
+            background: #b63b4d;
+            color: #FFF;
+        }
+
+        /* Media Responsive */
+
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+        top: 0;
+    }
+
+    .logo {
+        max-height: 90px;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        top: 0;
+        width: 100%;
+        font-size: 12px;
+    }
+
+    header {
+        margin-top: 0px;
+    }
+
+    h2 {
+        font-size: 15px;
+    }
+
+    .transfer {
+        margin: 1px;
+    }
+
+    footer {
+        margin-top: 1px;
+    }
+}
+
+@media (max-width: 576px) {
+    body {
+        font-size: 10px;
+        margin-top: 0px;
+    }
+
+    .logo {
+        max-height: 30px;
+    }
+}
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
 
 <body style="background-image: url(../images/bus.jpg);">
@@ -35,49 +360,193 @@
         }(document, 'script', 'mpesa_btn_js'));
     </script>
     <header>
-        <h1><a><img src="../images/logo.png" class="logo"></a>Afrocean Taxis</h>
+        <h1><a><img src="https://imgur.com/6h5ow4f.png" class="logo"></a>Afrocean Taxis</h>
     </header>
     <div class="parent">
         <div class="bookings">
             <div class="dates">
                 <label for="datetimepicker">Choose a transfer date:</label>
-                <input type="datetime-local" id="datetimepicker" width="300px" name="datetimepicker">
+                <input type="datetime-local" id="datetimepicker" width="30%" name="datetimepicker">
             </div>
             <section>
-                <div class="pass-dropdown">
-                    <button class="pass-dropbtn">Select Number of passengers</button>
-                    <div class="pass-dropdown-content">
-                        <a href="#" data-value="2000">Less than 4</a>
-                        <a href="#" data-value="3000">Between 4 and 7</a>
-                        <a href="#" data-value="4000">Between 8 and 14</a>
-                        <a href="#" data-value="5000">Between 15 and 28</a>
-                        <a href="#" data-value="7000">Between 29 and 56</a>
-                        <a href="#">More</a>
-                    </div>
-                </div>
-            </section>
-            <section>
-                <div class="pickup-dropdown">
-                    <button class="pickup-dropbtn">Select Pick-up Point</button>
-                    <div class="pickup-dropdown-content">
-                        <a href="#">Mombasa International Airport</a>
-                        <a href="#">Mombasa Standard Gauge Terminal</a>
-                        <a href="#">Mombasa Town Bus Terminus</a>
-                    </div>
-                </div>
-            </section>
-            <section>
-                <div class="dest-dropdown">
-                    <button class="dest-dropbtn">Select Destination</button>
-                    <div class="dest-dropdown-content">
-                        <a href="#">Mombasa County</a>
-                        <a href="#">Diani</a>
-                        <a href="#">Kilifi</a>
-                        <a href="#">Watamu</a>
-                        <a href="#">Malindi</a>
-                        <a href="#">Lamu</a>
-                    </div>
-                </div>
+                <ul id="accordion" class="accordion">
+                    <li id="pass-dropdown">
+                        <div class="link" id="pass-dropbtn"><i class="fa fa-taxi"></i>Select no. of passengers<i class="fa fa-chevron-down"></i></div>
+                        <ul class="submenu" id="pass-dropdown-content">
+                            <li><a href="#" data-value="2000">Less than 4</a></li>
+                            <li><a href="#" data-value="3000">Between 4 and 7</a></li>
+                            <li><a href="#" data-value="4000">Between 8 and 14</a></li>
+                            <li><a href="#" data-value="5000">Between 15 and 28</a></li>
+                            <li><a href="#" data-value="7000">Between 29 and 56</a></li>
+                        </ul>
+                        <script>
+                            /* ________________Passengers */
+                                document.querySelectorAll('#pass-dropdown-content a').forEach(function (element) {
+                                    element.addEventListener('click', function (event) {
+                                        event.preventDefault();
+                                        document.getElementById('selected-pass').textContent = 'Selected Number of Passengers: ';
+                                        document.getElementById('selected-pass').textContent = this.textContent;
+                                        selectedPassengerCount = element.dataset.value;
+                                        passengerDropbtn.textContent = this.textContent;
+                                        updateCost();
+                                    });
+                                });
+                        </script>
+                    </li>
+                    <li id="pickup-dropdown">
+                        <div class="link" id="pickup-drobtn"><i class="fa fa-location"></i>Select Pick-up point<i class="fa fa-chevron-down"></i></div>
+                        <ul class="submenu" id="pickup-dropdown-content">
+                            <li><a href="#">Mombasa International Airport</a></li>
+                            <li><a href="#">Mombasa SGR Terminus</a></li>
+                            <li><a href="#">Mombasa Bus Terminus</a></li>
+                        </ul>
+                        <script>
+                                /* ________________Pickup */
+                                    document.querySelectorAll('#pickup-dropdown-content a').forEach(function (element) {
+                                        element.addEventListener('click', function (event) {
+                                            event.preventDefault();
+                                            document.getElementById('selected-pickup').textContent = 'Selected Pick-up Point: ';
+                                            document.getElementById('selected-pickup').textContent = this.textContent;
+                                        });
+                                    });
+                        </script>
+                    </li>
+                    <li id="dest-dropdown">
+                        <div class="link" id="dest-dropbtn"><i class="fa fa-city"></i>Select Destination<i class="fa fa-chevron-down"></i></div>
+                        <ul class="submenu" id="dest-dropdown-content">
+                            <li><a href="#">Mombasa City</a></li>
+                            <li><a href="#">Diani</a></li>
+                            <li><a href="#">Kilifi</a></li>
+                            <li><a href="#">Watamu</a></li>
+                            <li><a href="#">Malindi</a></li>
+                        </ul>
+                        <script>
+                            /* _______________Destinations */
+                                document.querySelectorAll('#dest-dropdown-content a').forEach(function (element) {
+                                    element.addEventListener('click', function (event) {
+                                        event.preventDefault();
+                                        document.getElementById('selected-destination').textContent = 'Selected Destination: ';
+                                        document.getElementById('selected-destination').textContent = this.textContent;
+                                    });
+                                });
+
+                        </script>
+                    </li>
+                </ul>
+                <script>
+                    /** Accordion */
+                        function Accordion(el, multiple) {
+                            this.el = el || {};
+                            this.multiple = multiple || false;
+
+                            const links = this.el.querySelectorAll('.link');
+                            links.forEach(link => link.addEventListener('click', this.dropdown.bind(this)));
+                        }
+
+                        Accordion.prototype.dropdown = function (event) {
+                            const $this = event.currentTarget;
+                            const $next = $this.nextElementSibling;
+
+                            $next.classList.toggle('open');
+                            $next.style.display = $next.style.display === 'none' ? 'block' : 'none';
+
+                            if (!this.multiple) {
+                                const allSubmenus = this.el.querySelectorAll('.submenu');
+                                allSubmenus.forEach(submenu => {
+                                    if (submenu !== $next) {
+                                        submenu.style.display = 'none';
+                                        submenu.parentNode.classList.remove('open');
+                                    }
+                                });
+                            }
+                        };
+                        const accordion = new Accordion(document.getElementById('accordion'), false);
+                </script>
+                <script>
+                    /* _________________Cost */
+                        const destinationDropdown = document.querySelector('#dest-dropdown');
+                        const destinationDropbtn = destinationDropdown.querySelector('#dest-dropbtn');
+                        const destinationDropdownContent = destinationDropdown.querySelector('#dest-dropdown-content');
+
+                        const passengerDropdown = document.querySelector('#pass-dropdown');
+                        const passengerDropbtn = passengerDropdown.querySelector('#pass-dropbtn');
+                        const passengerDropdownContent = passengerDropdown.querySelector('#pass-dropdown-content');
+
+                        const costDiv = document.createElement('div');
+                        costDiv.id = 'cost';
+                        destinationDropdown.appendChild(costDiv);
+
+                        let selectedDestination = null;
+                        let selectedPassengerCount = null;
+
+                        destinationDropdownContent.addEventListener('click', (event) => {
+                            if (event.target.tagName === 'A') {
+                                event.preventDefault();
+                                selectedDestination = event.target.textContent;
+                                destinationDropbtn.textContent = selectedDestination;
+                                updateCost();
+                            }
+                        });
+
+
+
+                        passengerDropdownContent.addEventListener('click', (event) => {
+                            if (event.target.tagName === 'A') {
+                                event.preventDefault();
+                                selectedPassengerCount = event.target.getAttribute('data-value');
+                                passengerDropbtn.textContent = `Select Number of passengers (${selectedPassengerCount})`;
+                                updateCost();
+                                const vehicleImage = document.getElementById('vehicle-image');
+                                console.log(`Selected Passenger Count: ${selectedPassengerCount}`); // Add this line
+                                switch (selectedPassengerCount) {
+                                    case '2000':
+                                        vehicleImage.src = 'https://imgur.com/JUSqWC3.jpg';
+                                        break;
+                                    case '3000':
+                                        vehicleImage.src = 'https://imgur.com/IGjZic4.jpg';
+                                        break;
+                                    case '4000':
+                                        vehicleImage.src = 'https://imgur.com/4aVjbnq.jpg';
+                                        break;
+                                    case '5000':
+                                        vehicleImage.src = 'https://imgur.com/iVjwIuP.jpg';
+                                        break;
+                                    case '7000':
+                                        vehicleImage.src = 'https://imgur.com/0g0zJAz.jpg';
+                                        break;
+                                    default:
+                                        vehicleImage.src = 'https://imgur.com/6h5ow4f.png'; // Clear the image if no match
+                                }
+                            }
+                        });
+
+
+                        /* Selected passenger output */
+                        const vehicleTypes = {
+                            "2000": "Saloon",
+                            "3000": "Van",
+                            "4000": "Minivan",
+                            "5000": "Minibus",
+                            "7000": "Bus",
+                        };
+
+                        let isDropdownOpen = false;
+
+                        passengerDropdown.addEventListener('click', (event) => {
+                            if (event.target.tagName === 'BUTTON') {
+                                isDropdownOpen = !isDropdownOpen;
+                                passengerDropdownContent.style.display = isDropdownOpen ? 'block' : 'none';
+                            } else if (event.target.tagName === 'A') {
+                                event.preventDefault();
+                                const selectedDataValue = event.target.getAttribute('data-value');
+                                selectedPassengerCount = selectedDataValue;
+                                passengerDropbtn.textContent = 'Select Number of passengers'; // Reset button text
+                                const selectedVehicleType = vehicleTypes[selectedDataValue];
+                                document.getElementById('selected-pass').textContent = `Vehicle type: ${selectedVehicleType}`;
+                                updateCost();
+                            }
+                        });
+                </script>
             </section>
         </div>
         <div class="bookings" style="align-items: center;">
@@ -95,14 +564,52 @@
                 <span id="selected-destination">No destination selected</span>
                 <div id="destination-selection"></div>
             </div>
-            <div id="cost"></div>
         </div>
         <div class="bookings">
             <div id="vehicle-image-container">
-                <img id="vehicle-image" src="../images/logo.png" alt="Vehicle Image">
+                <img id="vehicle-image" src="https://imgur.com/6h5ow4f.png" alt="Vehicle Image">
             </div>
         </div>
     </div><br>
+
+    <script>
+                function updateCost() {
+                        if (selectedDestination && selectedPassengerCount) {
+                            let cost = parseInt(selectedPassengerCount);
+                            switch (selectedDestination) {
+                                case 'Mombasa County':
+                                    cost *= 1;
+                                    break;
+                                case 'Diani':
+                                case 'Kilifi':
+                                    cost *= 3;
+                                    break;
+                                case 'Watamu':
+                                    cost *= 4;
+                                    break;
+                                case 'Malindi':
+                                    cost *= 5;
+                                    break;
+                                case 'Lamu':
+                                    cost *= 6;
+                                    break;
+                                default:
+                                    cost = 0;
+                            }
+                            const amountInput = document.querySelector('input[name="amount"]'); // Modify selector if needed
+                            amountInput.value = cost;
+                            costDiv.textContent = `Trip Cost: kshs${cost}`;
+                            // Set readonly attribute
+                            amountInput.setAttribute('readonly', true);
+                        } else {
+                            costDiv.textContent = 'Please select pickup point and destination.';
+                            // Remove readonly attribute if previously set
+                            const amountInput = document.querySelector('input[name="amount"]'); // Modify selector if needed
+                            amountInput.removeAttribute('readonly');
+                        }
+                    }
+    </script>
+    <div id="cost"></div><br /><br />
 
     <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top" id="paypal-form">
         <input type="hidden" name="cmd" value="_xclick">
@@ -120,11 +627,13 @@
         <input type="hidden" name="lc" value="US">
     </form><br>
 
-    <div class="footer-buttons">
-        <h3 style="color: blueviolet;"><i class="fa fa-money" id="spt" style="margin-right: 10px; color: rgb(193, 32, 32);"></i>Choose payment method:</h3><br>
+        <h3 style="color: blueviolet;"><i class="fa fa-money" id="spt" style="margin-right: 10px; color: rgb(193, 32, 32);"></i>Choose payment method:</h3>
+        <div class="footer-buttons">
         <div class="paypal-button">
+            <div id="paypal-button-container">
             <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0"
                 name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" form="paypal-form" />
+            </div>
         </div>
         <div class="mpesa-button" id='mpesaButton'
             data-url='https://domain.com/mpesa/payments/request'>
@@ -138,6 +647,182 @@
     <script
         src="https://sandbox.paypal.com/sdk/js?client-id=AUgyGZ6ROWAqwpVCLelOH7s9Gzz2osIuhkgyLB6X-zoZT-mFlH8cQQYzL8cyD9D67aMhRZXJMkZGrX9l"></script>
     <script language="JavaScript" src="../scripts/index.js" type="text/javascript"></script>
+    <script>
+        /* ________________Dates */
+            document.getElementById("datetimepicker").value = new Date().toISOString().slice(0, 16);
+            function updateDate() {
+                const selectedDate = document.getElementById("datetimepicker").value;
+                document.querySelector(".datetimepicker").innerHTML = selectedDate;
+            }
+            // Add event listener to the input element
+            document.getElementById("datetimepicker").addEventListener("change", updateDate);
+            // Call the function once to set the initial value
+            updateDate();
+
+            /* Paypal integration */
+                function initPayPalButton() {
+                    paypal
+                        .Buttons({
+                            style: {
+                                shape: "rect",
+                                color: "gold",
+                                layout: "vertical",
+                                label: "paypal",
+                            },
+
+                            createOrder: function (data, actions) {
+                                const userInput = document.getElementById("cost").value;
+                                const paypalAmount = parseFloat(userInput) / 100;
+                                return actions.order.create({
+                                    purchase_units: [
+                                        { amount: { currency_code: "USD", value: paypalAmount } },
+                                    ],
+                                });
+                            },
+
+                            onApprove: function (data, actions) {
+                                return actions.order.capture().then(function (orderData) {
+                                    // Full available details
+                                    console.log(
+                                        "Capture result",
+                                        orderData,
+                                        JSON.stringify(orderData, null, 2)
+                                    );
+
+                                    // Show a success message within this page, for example:
+                                    const element = document.getElementById("paypal-button-container");
+                                    element.innerHTML = "";
+                                    element.innerHTML = "<h3>Thank you for your payment!</h3>";
+
+                                    // Or go to another URL:  actions.redirect('thank_you.html');
+                                });
+                            },
+
+                            onError: function (err) {
+                                console.log(err);
+                            },
+                        })
+                        .render("#paypal-button-container", function (paypalButtonContainer) {
+                            // Check if the container exists
+                            if (paypalButtonContainer.element) {
+                                // Render the button
+                                paypalButtonContainer.render();
+                            } else {
+                                console.error("PayPal button container not found!");
+                            }
+                        });
+                }
+                initPayPalButton();
+
+
+            /* Comments */
+            function myFunction() {
+                let data = ""; let name = document.getElementById("fullame").value
+                let email = document.getElementById("email").value
+                let comment = document.getElementById("title").value
+
+                data = "User name : " + name + "<br/>User email : " + email + "<br/>User comment : " + comment
+
+                document.getElementById("data").innerHTML = data  // display data to paragraph
+            }
+
+            /* mpesa */
+            var button = document.getElementById("mpesaButton");
+
+            if (button !== null) {
+                document.head.insertAdjacentHTML('beforeend', '<link rel=stylesheet href="https://cdn.jsdelivr.net/gh/muaad/mpesa_button@master/styles/style.css">');
+                img = '<img style="width: 35px; display: inline; margin: -8px;" src= "https://cdn.jsdelivr.net/gh/muaad/mpesa_button@master/images/mpesa.png">'
+                btnMarkup = '<a href="" id="mpesaBtn" class="mpesaButton">' + img + '<span style="margin-right: 15px;">Pay with Mpesa</span></a>'
+                phoneInstruction = '<strong><em>We will send an Mpesa payment request to this phone number</em></strong>'
+                form = '<form>\
+    <label for="amount" class="mpesaLabel">Amount</label><input class="mpesaInput" type="text" placeholder="2000" name="amount" id="mpesaAmount"></input><br>\
+    <label for="phone" class="mpesaLabel">Phone Number</label><input class="mpesaInput" type="text" placeholder="254722123456" name="phone" id="mpesaPhoneNumber"></input><br>' + phoneInstruction + '<br><br><button href="" id="mpesaSend" class="mpesaButton" style="width: 100%;">' + img + '<span style="margin-right: 15px;">Pay</span></button></form>'
+                formMarkup = '<div id="mpesaForm"><h3 class="mpesaHeader">Pay With Mpesa</h3><button id="closeMpesaForm" class="mpesaFormClose">&#x2716;</button>' + form + '</div>'
+                button.innerHTML = btnMarkup
+
+                success = '<div style="text-align: center;" class="animate-bottom">\
+    <h2>√ Success</h2>\
+    <p>An Mpesa payment request will be sent to your phone shortly</p>\
+  </div>'
+
+                button.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    var formDiv = document.getElementById('mpesaForm');
+                    // Check if the form exists before creating a new one
+                    if (!formDiv) {
+                        formDiv = document.createElement('div');
+                        button.parentNode.insertBefore(formDiv, button.nextSibling);
+                        formDiv.innerHTML = formMarkup;
+                    }
+                    formDiv.style.display = formDiv.style.display === 'block' ? 'none' : 'block';
+
+                    // Close button functionality
+                    var closeButton = document.getElementById("closeMpesaForm");
+                    closeButton.addEventListener('click', function () {
+                        formDiv.style.display = 'none';
+                        // Toggle the visibility of the initial button
+                        button.style.display = button.style.display === 'none' ? 'block' : 'none';
+                    });
+
+                    amountInput = document.getElementById("mpesaAmount")
+                    phoneInput = document.getElementById("mpesaPhoneNumber")
+                    phone = button.getAttribute('data-phone')
+                    amount = button.getAttribute('data-amount')
+                    url = button.getAttribute('data-url')
+                    amountInput.value = amount
+                    phoneInput.value = phone
+
+                    payButton = document.getElementById("mpesaSend")
+                    loaderDiv = document.createElement('div')
+                    loaderDiv.setAttribute("id", "loader");
+                    payButton.parentNode.insertBefore(loaderDiv, payButton.nextSibling);
+                    loader = document.getElementById("loader")
+                    loader.style.display = "none";
+                    loader.style.margin = '-75px 0 0 -110px';
+
+                    payButton.addEventListener('click', function (evt) {
+                        evt.preventDefault();
+                        payButton.disabled = true;
+                        document.getElementById('mpesaPhoneNumber').disabled = true;
+                        formDiv = document.getElementById('mpesaForm')
+                        if (url !== undefined) {
+                            var xhttp = new XMLHttpRequest();
+                            xhttp.open("POST", url, true);
+                            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                            xhttp.send('phone=' + phoneInput.value + '&amount=' + amountInput.value);
+                            xhttp.onreadystatechange = function () {
+                                if (this.readyState == 4 && this.status == 200) {
+                                    formDiv.innerHTML = success
+                                } else {
+                                    formDiv.innerHTML = 'Something went wrong. Contact website developer. Error: "We could not POST to the URL specified!"'
+                                }
+                            };
+                        } else {
+                            setTimeout(function () {
+                                formDiv.innerHTML = 'Something went wrong. Contact website developer. Error: "No URL specified!"'
+                            }, 3000);
+                        }
+                        loader.style.display = "";
+                    })
+                })
+            }
+
+            /** mpesa close button */
+            button.addEventListener('click', function (e) {
+                // ... (existing code)
+                formDiv.style.display = formDiv.style.display === 'block' ? 'none' : 'block';
+
+                // Close button functionality
+                var closeButton = document.getElementById("closeMpesaForm");
+                closeButton.addEventListener('click', function () {
+                    formDiv.style.display = 'none';
+                });
+            });
+
+
+
+            </script>
+    <script language="JavaScript" src="files/scripts/dropdown.js" type="text/javascript"></script>
 </body>
 
 </html>

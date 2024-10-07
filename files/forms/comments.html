@@ -15,14 +15,19 @@
 	</title>
 	<style>
 		body {
-			background-image: url('../images/coversaloon.jpeg');
+			background-image: url('https://imgur.com/g74JpAI.jpeg');
 			background-repeat: no-repeat;
-			background-size: 1700px 1000px;
+			background-size: 100%;
 			height: 100%;
 			background-attachment: fixed;
 			background-position: center;
 			background-size: cover;
 			opacity: 1;
+			font-family: cursive;
+			font-size: 20px;
+			font-style: italic;
+			color: rgb(168, 146, 226);
+			padding-bottom: 120px;
 		}
 
 		#header {
@@ -32,10 +37,22 @@
 		#content {
 			font-weight: 900;
 			font-weight: bolder;
+			height: 65%;
+
+			margin-bottom: 80%;
 		}
 
 		#sidebar {
 			height: 65%;
+			width: 30%;
+			margin-right: 0;
+			position: fixed;
+			right: 0;
+			top: 0;
+			height: 100%;
+			overflow-y: auto;
+			background-color: #f8f9fa;
+			padding: 10px;
 
 		}
 
@@ -44,25 +61,23 @@
 
 		}
 
-		body {
-			font-family: cursive;
-			font-size: 20px;
-			font-style: italic;
-			color: rgb(72, 14, 220);
-		}
-
 		h1 {
 			text-align: center;
 			text-decoration: underline;
 			position: fixed;
+			color: burlywood;
+		}
+
+		#nvbr {
+			margin-top: 2%;
 		}
 
 		#cmt {
 			color: rgb(27, 27, 34);
 		}
 
-		#content {
-			height: 65%;
+		#about {
+			margin-bottom: 10%;
 		}
 
 		#post {
@@ -87,30 +102,6 @@
 			border-radius: 12px;
 		}
 
-		.icon-bar {
-			width: 100%;
-			overflow: auto;
-			background-color: #47b3f1;
-		}
-
-		.icon-bar a {
-			float: left;
-			text-align: center;
-			width: 20%;
-			padding: 12px 0;
-			transition: all 0.3s ease;
-			color: white;
-			font-size: 36px;
-		}
-
-		.icon-bar a:hover {
-			background-color: #000;
-		}
-
-		body {
-			padding-bottom: 120px;
-		}
-
 		.display {
 			width: 100px;
 		}
@@ -131,6 +122,36 @@
 			width: 70%;
 			height: 94px;
 		}
+
+		.icon-bar {
+			width: 100%;
+			overflow: auto;
+			background-color: #47b3f1;
+		}
+
+		.icon-bar a {
+			float: left;
+			text-align: center;
+			width: 20%;
+			padding: 12px 0;
+			transition: all 0.3s ease;
+			color: white;
+			font-size: 36px;
+		}
+
+		.icon-bar a:hover {
+			background-color: #000;
+		}
+
+		/* Media query for mobile view */
+@media screen and (max-width: 768px) {
+  .content, #sidebar {
+    width: 100%;
+    float: none;
+    position: static;
+    height: auto;
+  }
+}
 	</style>
 </head>
 
@@ -156,7 +177,7 @@
 			</div>
 			<div class="row" id="psn">
 				<div class="col-lg-8 col-md-4 col-sm-9 col-xs-9" id="content">
-					<p id="abt"> <b>Welcome to Afrocean Transfers: Your Reliable Taxi Service for Seamless Transfers
+					<p id="about"> <b>Welcome to Afrocean Transfers: Your Reliable Taxi Service for Seamless Transfers
 					Traveling can be stressful, but getting to your destination does not have to be. At Afrocean Transfers, we specialize in providing
 					comfortable and reliable taxi services from airports, train stations, and bus stations to your desired location. Whether
 					you are arriving in the city for business, leisure, or returning home, we have got you covered.<br>
@@ -198,7 +219,7 @@
 
 					At Afrocean Transfers, we are committed to providing you with the best taxi service experience. Wherever you are headed, we will get
 					you there safely and comfortably. Thank you for choosing Afrocean Transfers!</p>
-					</b><br /><br /><br />
+					</b><br />
 				</div><br />
 				<div class="col-lg-4 col-md-8 col-sm-3 col-xs-3" id="sidebar">
 					<div class="form-group">
@@ -235,11 +256,9 @@
 							<a href="https://www.quora.com/"><i class="fa fa-quora"></i></a>
 							<a href="../../index.html"><i class="fa fa-home"></i></a>
 						</div>
-
 					</div>
 				</footer>
 			</div>
-
 		</div>
 		<div>
 			<script>
