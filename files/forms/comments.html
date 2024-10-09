@@ -14,6 +14,10 @@
 		AFROCEAN TRANSFERS
 	</title>
 	<style>
+	  html {
+	   margin: 0;
+	   padding: 0;
+	    }
 		body {
 			background-image: url('https://imgur.com/g74JpAI.jpeg');
 			background-repeat: no-repeat;
@@ -22,46 +26,31 @@
 			background-attachment: fixed;
 			background-position: center;
 			background-size: cover;
-			opacity: 1;
+			opacity: 7;
 			font-family: cursive;
 			font-size: 20px;
 			font-style: italic;
 			color: rgb(168, 146, 226);
-			padding-bottom: 120px;
+			padding-bottom: 0;
+			margin: 0;
 		}
 
 		#header {
 			color: black;
+			margin-top: 0;
+			width: 100%;
 		}
 
 		#content {
 			font-weight: 900;
 			font-weight: bolder;
 			height: 65%;
-
 			margin-bottom: 80%;
 		}
 
-		#sidebar {
-			height: 65%;
-			width: 30%;
-			margin-right: 0;
-			position: fixed;
-			right: 0;
-			top: 0;
-			height: 100%;
-			overflow-y: auto;
-			background-color: #f8f9fa;
-			padding: 10px;
-
-		}
-
-		#footer {
-			height: 11%;
-
-		}
-
 		h1 {
+		    margin-top: 0;
+		    width: 100%;
 			text-align: center;
 			text-decoration: underline;
 			position: fixed;
@@ -76,9 +65,7 @@
 			color: rgb(27, 27, 34);
 		}
 
-		#about {
-			margin-bottom: 10%;
-		}
+
 
 		#post {
 			margin: 10px;
@@ -95,36 +82,57 @@
 			width: 50%
 		}
 
+
+		#sidebar {
+			height: 65%;
+			width: 30%;
+			margin-right: 0;
+			position: fixed;
+			right: 0;
+			top: 0;
+			height: 100%;
+			overflow-y: auto;
+			background-color: #f8f9fa;
+			padding: 1%;
+
+		}
+
 		.form-group input,
 		.form-group textarea {
+			color: #47b3f1;
 			background-color: black;
 			border: 1px solid rgba(16, 46, 46, 1);
 			border-radius: 12px;
+
 		}
 
-		.display {
-			width: 100px;
+		#display {
+			width: 30%;
+			margin: 0;
+			padding: 0;
 		}
 
 		#data {
 			margin-bottom: 0px;
 			background: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
+            padding: 5px;
+    		border-radius: 5px;
+    		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    		width: 100%;
+			height: 20%;
 		}
 
 		#footer {
 			position: fixed;
+			margin-bottom: 5%;
 			left: 0;
 			bottom: 0;
-			width: 70%;
-			height: 94px;
+			width: 100%;
+			height: 10%;
 		}
 
 		.icon-bar {
-			width: 100%;
+			width: 72%;
 			overflow: auto;
 			background-color: #47b3f1;
 		}
@@ -145,11 +153,91 @@
 
 		/* Media query for mobile view */
 @media screen and (max-width: 768px) {
-  .content, #sidebar {
+   body {
+       margin: 0;
+       padding: 0;
+       bottom: 0;
+       top: 0%;
+       display: flex;
+       flex-direction: column;
+       overflow-x: hidden;
+   }
+
+   #header {
+       top: 0;
+       padding: 0;
+       margin: 0;
+       position: fixed;
+   }
+
+   #cont-fluid {
+       width: 100%;
+       margin: 0;
+       padding: 0;
+   }
+
+   .row {
+       width: 100%;
+   }
+
+   #psn {
+       width: 100%;
+       align-items: center;
+       margin: 0;
+   }
+
+   #content {
+       width: 100%;
+       bottom: 0;
+       margin: 0 0 38% 0;
+   }
+
+  #sidebar {
     width: 100%;
+    margin: 0%;
+    padding: 0;
     float: none;
     position: static;
     height: auto;
+    top: 0;
+    bottom: 0;
+  }
+
+  #about {
+      margin: 0;
+      padding: 0;
+  }
+
+  .form-group input,
+		.form-group textarea {
+			width: 100%;
+		}
+
+		#post {
+		    margin: 1px;
+		}
+
+  #data {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 5%;
+  }
+
+  .page-footer {
+      margin: 0;
+      padding: 0;
+      bottom: 0;
+  }
+
+  .icon-bar {
+      width: 100%;
+      bottom: 0;
+      position: fixed;
+  }
+
+  .icon-bar a {
+      float: center;
   }
 }
 	</style>
@@ -157,17 +245,17 @@
 
 <body>
 	<div>
-		<div class="container-fluid`">
+		<div class="container-fluid" id="cont-fluid">
 			<div class="row">
 				<div class="col-lg-8 col-sm-12" id="header">
-					<h1><b><a><img src="../images/logo.png" style="width: 100px;" class="logo"></a>Afrocean Taxis</h1></b>
+					<h1><b><a><img src="https://imgur.com/6h5ow4f.png" style="width: 100px;" class="logo"></a>Afrocean Taxis</h1></b>
 				</div>
 			</div><br /><br />
 			<div class="row" id="nvbr">
 				<div class="col-lg-12" id="menu">
 					<ul>
-						<li><a href="http://localhost:3000/">Transport</a></li>
-						<li><a href="#abt">About Us</a></li>
+						<li><a href="../../index.html">Transfers</a></li>
+						<li><a href="#about">About Us</a></li>
 						<li><a href="#spt">Support</a></li>
 						<li><a href="https://www.quora.com/">Query</a></li>
 						<li><a href="#cont">Contact Us</a></li>
@@ -219,13 +307,12 @@
 
 					At Afrocean Transfers, we are committed to providing you with the best taxi service experience. Wherever you are headed, we will get
 					you there safely and comfortably. Thank you for choosing Afrocean Transfers!</p>
-					</b><br />
 				</div><br />
 				<div class="col-lg-4 col-md-8 col-sm-3 col-xs-3" id="sidebar">
 					<div class="form-group">
 						<h4>Leave a comment</h4> <label for="message">Message</label> <textarea name="msg" id="title" msg
 							cols="30" rows="5" class="form-control" style="background-color: black;"
-						onkeyup="Allow()" placeholder="write a comment......"></textarea>
+						onkeyup="" placeholder="write a comment......"></textarea>
 					</div>
 					<div class="form-group"> <label for="name">Name</label> <input type="text" name="name" id="fullname"
 							class="form-control"> </div>
@@ -236,15 +323,14 @@
 								id="cmt">Google Account</a> your pic will be used to display your profile picture.</p>
 					</div>
 					<div class="form-inline"> <input type="checkbox" name="check" id="checkbx" class="mr-1" checked>
-						<label for="subscribe">Subscribe me to the newlettter</label>
+						<label for="subscribe">Subscribe me to the newsletter</label>
 					</div>
-					<div class="form-group"> <input type="button" onclick="myFunction()" id="post" class="btn" value="Post Comment" > </div>
+					<div class="form-group"> <input type="button" onclick="comments()" id="post" class="btn" value="Post Comment" > </div>
 						<p id="data"></p>
 					</div>
 				</div>
 			</div>
 			<br />
-			<div id="display"></div>
 			<div class="row" id="footer">
 				<footer class="page-footer">
 					<div class="col-lg-12" id="cont"><b style="background-color:#47b3f1;">
@@ -262,10 +348,10 @@
 		</div>
 		<div>
 			<script>
-				function myFunction() {
-					let data = ""; let name = document.getElementById("userName").value
-					let email = document.getElementById("userEmail").value
-					let comment = document.getElementById("userComment").value
+				function comments() {
+					let data = ""; let name = document.getElementById("fullname").value
+					let email = document.getElementById("email").value
+					let comment = document.getElementById("title").value
 
 					data = "User name : " + name + "<br/>User email : " + email + "<br/>User comment : " + comment
 
